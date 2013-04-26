@@ -1,0 +1,32 @@
+<p>Authors</p>
+<p>Last name:<input type="text" name="last_name"></p>
+<p>First name:<input type="text" name="first_name"></p>
+<p>Middle name:<input type="text" name="middle_name"></p>
+<p><input type="checkbox" name="author_np_affiliation" checked> Yes, the author wrote the paper as NP employee.</p>
+
+
+<p> Identificator: 
+  <select name="identificator_category">
+  <?r @pub_identificator.each_with_index do |elem1, i| ?>
+    <option value="#{elem1}">#{elem1}</option>
+  <?r end ?>
+  </select>
+  <input type="text" name="identificator_id" value="">
+</p>
+
+<p>Link to affiliated dataset:
+  <input type="text" name="dataset">
+</p>
+<p>Link to affiliated project:
+  <input type="text" name="project" value="">
+</p>
+
+<p>English abstract:<textarea rows="4" cols="50" value="#{ @eng_abstract }" name='eng_abstract'></textarea></p>
+<p>Non-scientific Norwegian/English abstract for stakeholders and the public (Minstry of the Environment, NP's home pages, environmental organizations etc)</p>
+<textarea rows="4" cols="50" value="#{ @non_sci_abstract }"></textarea></p>
+
+<p><input type="checkbox" name="ice_affiliation">Yes, publication is affiliated to ICE</p>
+<p><input type="checkbox" name="np_affiliation" checked>
+Yes, publication is affiliated to NP activity (you may register your other publications as well to appear on your CV on NP homepages)</p>
+
+#{ render_partial :submit }

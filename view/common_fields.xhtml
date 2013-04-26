@@ -1,0 +1,34 @@
+<div class="control-group">
+<label class="control-label">Identificator:</label>
+<div class="controls"> 
+<select name="identificator_category" class="select">
+    <option value="DOI">DOI</option>
+  <?r @pub_identificator.each_with_index do |elem1, i| ?>
+    <option value="#{elem1}">#{elem1}</option>
+  <?r end ?>
+  </select>
+  <input type="text" name="identificator_id" value="">
+</div>
+
+<div class="control-group">
+<label class="control-label">Link to affiliated dataset:</label>
+<div class="controls"><input type="text" name="dataset"></div>
+</div>
+
+<div class="control-group">
+<label class="control-label">Link to affiliated project:</label>
+<div class="controls"><input type="text" name="project" value="">
+</div></div>
+
+<div class="control-group">
+<input type="checkbox" name="ice_affiliation">Yes, publication is affiliated to ICE
+</div>
+<div class="control-group">
+<input type="checkbox" name="np_affiliation" checked>Yes, publication is affiliated to NP activity (you may register your other publications as well to appear on your CV on NP homepages)
+</div>
+<div class="control-group">
+<label> Upload paper as pdf </label></div>
+<div class="control-group">
+<input type="checkbox" name="publicly_available">Yes, publication can be made publicly available on NP's web pages (if uncertain, leave unchecked).</div>
+
+

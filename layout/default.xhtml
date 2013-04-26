@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>#{@title}</title>
+
+        #{js('myscripts')}
+        #{js('jquery-1.9.1.min')}
+        #{js('jquery-1.10.2-ui')}
+        #{js('bootstrap')}
+        <!-- #{js('availablejournals')} -->
+        #{css('bootstrap')}
+        #{css('bootstrap-responsive')} 
+        #{css('jquery-1.10.2-ui')} 
+        <!-- #{css('reset')} --> 
+        <!-- #{css('grid')} -->
+        <!-- #{css('layout')} --> 
+        <!-- #{css('text')} -->
+
+<link href="../css/variables.less" rel="stylesheet" type="text/css" />
+<link href="../css/bootswatch.less" rel=stylesheet" type="text/css" />
+
+
+
+    </head>
+    <body>
+        <div class="container">
+            <div id="container" class="row">
+                <!-- Top part, contains the navigation menu -->
+                <div id="top" class="grid_12">
+                    <header class="grid_6">
+                        <h1>#{@title}</h1>
+                    </header> 
+
+                 <!--   <nav class="grid_6 last">
+                        <ul class="clearfix">
+                            <li>
+                                <a href="http://www.npolar.no/">NP website</a>
+                            </li>
+                            <li>
+                                <a href="http://data.npolar.no">NP data center</a>
+                            </li>
+                        </ul>
+                    </nav>  -->
+                </div>
+
+                <div id="content" class="grid_12">
+                    #{@content}
+                </div>
+            </div>
+
+            <footer id="footer">
+                <p>
+                    Licenced under   <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+                        Creative Commons license.
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

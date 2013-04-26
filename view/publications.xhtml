@@ -1,0 +1,125 @@
+<form class="form-inline" accept-charset="UTF-8" action="create" method="post">
+<script type="text/javascript">
+$(function() {
+   $( "#datepicker").datepicker();
+});
+</script>
+
+<!--
+<p>Publication: 
+   <select name='publication_process' id='publication_process'>
+         <option value="Select" selected>-- Select --</option> 
+      <?r @publication_process.each_with_index do |elem0, i| ?>
+         <option value="#{elem0}">#{elem0}</option>
+      <?r end ?>
+   </select> <h10>Choose planned only if you need assistance from the Information section. In-press is for peer-reviewed publications only.</h10> 
+</p>
+-->
+
+<p>&nbsp;</p>
+<label class="control-label">Publication category:</label> 
+<div class="controls">
+    <select name='publication_category' id='publication_category'>
+       <option value="Select" selected>-- Select --</option>
+       <?r @publication_category.each_with_index do |elem, i| ?>
+           <option value="#{elem}">#{elem}</option>
+       <?r end ?>
+    </select>
+</div>
+<p> &nbsp;</p>
+
+<script type="text/javascript">
+   $('#publication_process').change(function() {
+   d = document.getElementById("publication_process");
+     //Hide all previous results
+     $('#planned_id').hide();
+     $('#in_press_id').hide();
+     $('#published_id').hide();
+
+     switch (d.value)
+     {
+     case 'Planned':
+        $('#planned_id').show();
+        break;
+     case 'In-press':
+        $('#in_press_id').show();
+        break;
+     case 'Published':
+        $('#published_id').show();
+        break;
+     }
+   });
+</script>
+
+<script type="text/javascript">
+   $('#publication_category').change(function() {
+     d = document.getElementById("publication_category");
+     //Hide all previous results
+     $('#sci_papers_id').hide();
+     $('#books_id').hide();
+     $('#phd_thesis_id').hide();
+     $('#master_thesis_id').hide();
+     $('#proceedings_id').hide();
+     $('#abstracts_id').hide();
+     $('#posters_id').hide();
+     $('#report_series_id').hide();
+     $('#brief_report_series_id').hide();
+     $('#popular_sci_id').hide();
+     switch (d.value)
+     {
+     case 'Peer-reviewed publications':
+        $('#sci_papers_id').show();
+        break;
+     case 'Book and book chapters':
+        $('#books_id').show();
+        break;
+     case 'PhD thesis':
+        $('#phd_thesis_id').show();
+        break;
+     case 'Master thesis':
+        $('#master_thesis_id').show();
+        break;
+     case 'Proceedings':
+        $('#proceedings_id').show();
+        break;
+     case 'Abstracts':
+        $('#abstracs_id').show();
+        break;
+     case 'Posters':
+        $('#posters_id').show();
+        break;
+     case 'Report series':
+        $('#report_series_id').show();
+        break;
+     case 'Brief report series':
+        $('#brief_report_series_id').show();
+        break;
+     case 'Popular science':
+        $('#popular_sci_id').show();
+        break;
+     }
+     if (d.value == 'Peer-reviewed publications') {
+        $('#sci_papers_id').show();
+     }
+   });
+</script>
+
+ 
+<div id="sci_papers_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="books_id" style="display:none">#{ render_partial :books }</div>
+<div id="phd_thesis_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="master_thesis_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="proceedings_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="abstracts_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="posters_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="report_series_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="brief_resport_series_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="popular_sci_id" style="display:none">#{ render_partial :sci_papers }</div>
+
+
+<div id="published_id" style="display:none"> #{ render_partial :published } </div>
+<div id="planned_id" style="display:none"> #{ render_partial :planned } </div>
+<div id="in_press_id" style="display:none"> #{ render_partial :published } </div>
+ 
+</form>
+
