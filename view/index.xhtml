@@ -1,45 +1,82 @@
-<p>
-    Congratulations, Ramaze is running fine and you can start working on your application.
-</p>
+<p>&nbsp;</p>
+<label class="control-label">Publication category:</label> 
+<div class="controls">
+    <select name='publication_category' id='publication_category'>
+       <option value="Select" selected>-- Select --</option>
+       <?r @publication_category.each_with_index do |elem, i| ?>
+           <option value="#{elem}">#{elem}</option>
+       <?r end ?>
+    </select>
+</div>
+<p> &nbsp;</p>
 
-<p>
-    You can play around with this prototype by changing the following:
-</p>
 
-<ul>
-    <li>
-        <code>view/index.xhtml</code>: the content of this page.
-    </li>
-    <li>
-        <code>layout/default.xhtml</code>: the layout for this page.
-    </li>
-    <li>
-        <code>controller/main.rb</code>: the controller responsible for server this page.
-    </li>
-</ul>
+<script type="text/javascript">
+   $('#publication_category').change(function() {
+     d = document.getElementById("publication_category");
+     //Hide all previous results
+     $('#sci_papers_id').hide();
+     $('#books_id').hide();
+     $('#phd_thesis_id').hide();
+     $('#master_thesis_id').hide();
+     $('#proceedings_id').hide();
+     $('#abstracts_id').hide();
+     $('#posters_id').hide();
+     $('#report_series_id').hide();
+     $('#brief_report_series_id').hide();
+     $('#popular_sci_id').hide();
+     switch (d.value)
+     {
+     case 'Peer-reviewed publications':
+        $('#sci_papers_id').show();
+        break;
+     case 'Book and book chapters':
+        $('#books_id').show();
+        break;
+     case 'PhD thesis':
+        $('#phd_thesis_id').show();
+        break;
+     case 'Master thesis':
+        $('#master_thesis_id').show();
+        break;
+     case 'Proceedings':
+        $('#proceedings_id').show();
+        break;
+     case 'Abstracts':
+        $('#abstracs_id').show();
+        break;
+     case 'Posters':
+        $('#posters_id').show();
+        break;
+     case 'Report series':
+        $('#report_series_id').show();
+        break;
+     case 'Brief report series':
+        $('#brief_report_series_id').show();
+        break;
+     case 'Popular science':
+        $('#popular_sci_id').show();
+        break;
+     }
+     if (d.value == 'Peer-reviewed publications') {
+        $('#sci_papers_id').show();
+     }
+   });
+</script>
 
-<p>
-    For more information, check out <a href="http://ramaze.net">ramaze.net</a> and
-    <a href="http://ramaze.net/documentation/index.html">the documentation</a>.
-    <br />
-    You can also read the
-    <a href="http://doc.rubyists.com/ramaze%2binnate/">YARD documentation</a>
-    or browse around the <a href="https://github.com/ramaze/ramaze">Ramaze source code</a>.
-</p>
+ 
+<div id="sci_papers_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="books_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="phd_thesis_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="master_thesis_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="proceedings_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="abstracts_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="posters_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="report_series_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="brief_resport_series_id" style="display:none">#{ render_partial :sci_papers }</div>
+<div id="popular_sci_id" style="display:none">#{ render_partial :sci_papers }</div>
 
-<p>
-    For help with Ramaze, visit
-    <a href="irc://chat.freenode.net/ramaze">#ramaze on irc.freenode.net</a>.
-    <br />
-    You can use <a href="http://embed.mibbit.com/?server=irc.freenode.net&amp;channel=%23ramaze,%23ruby-lang&amp;forcePrompt=true">Mibbit</a>,
-    an AJAX based IRC client or
-    <a href="http://java.freenode.net/?channel=ramaze">
-        the official freenode irc java applet
-    </a>.
-</p>
 
-<p>
-    Feel free to post to the
-    <a href="https://groups.google.com/forum/#!forum/ramaze">Ramaze Google Group</a>, your
-    first mail has to go through moderation, so please be patient.
-</p>
+
+
+

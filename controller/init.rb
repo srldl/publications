@@ -6,20 +6,13 @@ class Controller < Ramaze::Controller
   layout :default
   helper :xhtml
   engine :etanni
-
-  def initialize
-    super
-    @title = 'NP publications'
-  end
-
 end
 
 # Here you can require all your other controllers. Note that if you have multiple
 # controllers you might want to do something like the following:
 #
-  Dir.glob('controller/*.rb').each do |controller|
-    require(controller)
-  end
+#  Dir.glob('controller/*.rb').each do |controller|
+#    require(controller)
+#  end
 #
-#require __DIR__('main')
-
+require __DIR__('main')

@@ -1,127 +1,17 @@
-
-
 <div class="control-group">
-<input type="radio" id='status' name="status" value="planned" ><label class="control-label">Planned/submitted</label>
-<input type="radio" id='status' name="status" value="in-press" ><label class="control-label">In-press</label>
-<input type="radio" id='status' name="status" value="published" ><label class="control-label">Published</label> 
+<label class="control-label"><input type="radio" id='status' name="status" value="planned" >Planned/submitted
+<input type="radio" id='status' name="status" value="in-press" >In-press
+<input type="radio" id='status' name="status" value="published" >Published</label> 
 </div>
 
-<div id="planned_id" style="display:none"> #{ render_partial :planned } </div>
-
-<style>
-#sortable { list-style-type: none; margin: 0; padding: 10; width: 22%; }
-#sortable li margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 16px; }
-#sortable li span { position: absolute; margin-left: -1.3em; }
-</style>
-
-<div class="control-group">
-<label class="control-label">Authors:</label>
-<!-- <a href="#myModal" role="button" class="btn2" data-toggle="modal">&nbsp;&nbsp;<small>Can't find author? </small></a>
--->
-</br>
-<div class="label"><ul id="sortable">
-<li class="ui-state-default2"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><span class="label label-inverse">^<input id="author" name="author">&nbsp;&nbsp;<span class="label label-important">Delete</span></span></li>
-<li class="ui-state-default2"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><span class="label label-inverse">^<input id="author2" name="author2"></a>&nbsp;&nbsp;<span class="label label-important">Delete</span></span></li>
-</ul>
 <p>&nbsp;</p>
-<div class="controls"><button class="btn btn-primary">More authors</button></div>
-<div class="controls"><small>Drag an author's name up or down to sort the list differently. </small>
-<a href="#myModal" role="button" class="btn2" data-toggle="modal">&nbsp;&nbsp;<small>Can't find author? </small></a>
-</div></div>
-
-</div>
-
-<script type='text/javascript'>
-$(function() {
-  $("#sortable" ).sortable();
-  //$("#sortable" ).disableSelection();
-});
-</script>
-
-<script type='text/javascript'>
-$(function() {
-  var availableJournals = #@journal;
-  var availableAuthors = #@author;
-  //alert(availableAuthors);
-$("#journal").autocomplete({
-  source: availableJournals });
-  $("#author").autocomplete({
-   source: availableAuthors });
-});
-</script>
-
-<!--
-<script type='text/javascript'>
-   function show_communication(show_hide) {
-   if (show_hide == 'show'){
-     //If planned, show additional results
-     $('#planned_id').show();
-  } else {
-     $('#planned_id').hide();
- }
-}
-</script>
--->
-
-#{ render_partial :modal_sci_papers }
-
-<div class="control-group">
-<label class="control-label">Publication:</label>
-<div class="controls"><input type="text"name='journal' id='journal'>
-<a href="#myJournal" role="button2" class="btn2" data-toggle="modal">&nbsp;&nbsp;<small>Can't find journal/periodical?</small></a></div>
-</div>
-<div class="control-group">
-<label class="control-label">Title:</label>
-<div class="controls"><input type="text" value="#{@title}" name='title'></div></div>
-<div class="control-group">
-<label class="control-label">Year:</label>&nbsp;&nbsp;
-
-<div class="controls"><input type="text" name='published_year'>
-<span class="label label-important">Required</span></div>
-</div>
-
-<div class="control-group">
-<label class="control-label">Volume:</label>
-<div class="controls"><input type="text" name='volume'></div>
-</div>
-
-<div class="control-group">
-<label class="control-label">Issue:</label>
-<div class="controls"><input type="text" name='issue'></div>
-</div>
-
-<div class="control-group">
-<label class="control-label">Suppl:</label>
-<div class="controls"><input type="text" name='suppl'></div>
-</div>
-
-<div class="control-group">
-<label class="control-label">From page:</label>&nbsp;&nbsp;<label class="control-label">To page:</label>
-<label class="control-label"><i>or</i> Total no of pages:</label>
-<div class="controls">
-<input type="text" class="input-mini" name='from_page'>
-<input type="text" class="input-mini" name='to_page'>
-<input type="text" class="input-mini" name='pages'>
-</div></div>
-
-<div class="control-group"><label class="control-label">Article no:</label>
-<div class="controls"><input type="text"  class="input-mini" name='article_no'></div></div>
-
-<div class="control-group"><label class="control-label">
-Date (dd.mm.yyyy for newspapers etc):</label>
-<div class="controls"><input type="text" class="input-small" id="datepicker" /></div></div>
-
-<div class="control-group">
-<label class="control-label">English abstract:</label>
-<div class="controls"><textarea rows="7" value="#{ @eng_abstract }" name='eng_abstract'></textarea></div>
-
-<div class="control-group"><label class="control-label">
-Non-scientific Norwegian/English abstract <br />
-for stakeholders and the public (Minstry <br /> of the Environment, NP's home pages, <br />
-environmental organizations etc):</label>
-<div class="controls"><textarea rows="7" value="#{ @non_sci_abstract }"></textarea></div>
+<label class="control-label"><span class="label label-info">Required</span>&nbsp;<a href='sci_papers/authors'>Author(s)</a></label> 
+<label class="control-label"><span class="label label-info">Required</span>&nbsp;<a href='sci_papers/publication'>Publication</a></label> 
+<label class="control-label"><span class="label label-info">Required</span>&nbsp;<a href='sci_papers/publication_details'>Publication details</a></label> 
+<label class="control-label"><span class="label label-info">Required</span>&nbsp;<a href='sci_papers/abstracts'>Abstracts</a></label> 
+<label class="control-label"><span class="label label-info">Required</span>&nbsp;<a href='sci_papers/datasets_projects'>Datasets and projects</a></label> 
+<label class="control-label"><span class="label label-info">Required</span>&nbsp;<a href='sci_papers/paper_upload'>Upload paper</a></label> 
 
 
-#{ render_partial :common_fields }
 
-#{ render_partial :submit }
+

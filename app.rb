@@ -7,8 +7,3 @@ require 'ramaze'
 Ramaze.options.roots = [__DIR__]
 
 require __DIR__('controller/init')
-
-#Application configuration
-#require __DIR__('config/config')
-
-
