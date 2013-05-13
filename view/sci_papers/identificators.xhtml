@@ -1,0 +1,12 @@
+<div class="control-group">
+<label class="control-label">Identificator:</label>
+<div class="controls"> 
+<select name="identificator_category" class="select">
+    <option value="DOI">DOI</option>
+  <?r @pub_identificator.each_with_index do |elem1, i| ?>
+    <option value="#{elem1}">#{elem1}</option>
+  <?r end ?>
+  </select>
+  <input type="text" name="identificator_id" value="">
+</div>
+

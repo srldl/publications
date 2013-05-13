@@ -11,6 +11,7 @@
 class MainController < Controller
   # the index action is called automatically when no other action is specified
   def index
+    puts "kom til index----------------------------------"
     @title = 'NP Publications'
     @publication_category = ['Peer-reviewed publications', 'Book and book chapters', 'PhD thesis', 'Master thesis', 'Proceedings', 'Abstracts', 'Posters', 'Report series', 'Brief report series', 'Popular science']
   end

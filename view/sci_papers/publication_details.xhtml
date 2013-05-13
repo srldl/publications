@@ -40,18 +40,6 @@
 Date (dd.mm.yyyy for newspapers etc):</label>
 <div class="controls"><input type="text" class="input-small" id="datepicker" /></div></div>
 
-<div class="control-group">
-<label class="control-label">Identificator:</label>
-<div class="controls"> 
-<select name="identificator_category" class="select">
-    <option value="DOI">DOI</option>
-  <?r @pub_identificator.each_with_index do |elem1, i| ?>
-    <option value="#{elem1}">#{elem1}</option>
-  <?r end ?> 
-
-  </select>
-  <input type="text" name="identificator_id" value="">
-</div>
 
 <div class="control-group">
 <input type="checkbox" name="ice_affiliation">Yes, publication is affiliated to ICE

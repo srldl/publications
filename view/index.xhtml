@@ -43,7 +43,7 @@
         $('#proceedings_id').show();
         break;
      case 'Abstracts':
-        $('#abstracs_id').show();
+        $('#abstracts_id').show();
         break;
      case 'Posters':
         $('#posters_id').show();
@@ -58,25 +58,20 @@
         $('#popular_sci_id').show();
         break;
      }
-     if (d.value == 'Peer-reviewed publications') {
-        $('#sci_papers_id').show();
-     }
+  
    });
 </script>
 
- 
-<div id="sci_papers_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="books_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="phd_thesis_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="master_thesis_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="proceedings_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="abstracts_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="posters_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="report_series_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="brief_resport_series_id" style="display:none">#{ render_partial :sci_papers }</div>
-<div id="popular_sci_id" style="display:none">#{ render_partial :sci_papers }</div>
 
 
-
-
+<div id="sci_papers_id" style="display:none" >#{ render_partial :sci_papers }</div>
+<div id="books_id" style="display:none">#{ render_partial :books }</div>
+<div id="phd_thesis_id" style="display:none">#{ render_partial :phd_thesis }</div>
+<div id="master_thesis_id" style="display:none">#{ render_partial :master_thesis }</div>
+<div id="proceedings_id" style="display:none">#{ render_partial :proceedings }</div>
+<div id="abstracts_id" style="display:none">#{ render_partial :abstracts }</div>
+<div id="posters_id" style="display:none">#{ render_partial :posters }</div>
+<div id="report_series_id" style="display:none">#{ render_partial :report_series }</div>
+<div id="brief_report_series_id" style="display:none">#{ render_partial :brief_report_series }</div>
+<div id="popular_sci_id" style="display:none">#{ render_partial :popular_sci }</div>
 

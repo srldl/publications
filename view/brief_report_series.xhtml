@@ -1,8 +1,7 @@
 
-<input type="radio" id='sci_papers_status1' name="sci_papers_status" onclick="handleRadio(this.value);" value="planned" >Planned/submitted
-<input type="radio" id='sci_papers_status2' name="sci_papers_status" onclick="handleRadio(this.value);" value="in-press" >In-press
-<input type="radio" id='sci_papers_status3' name="sci_papers_status" onclick="handleRadio(this.value);" value="published" checked="checked">Published 
-
+<input type="radio" id='brief_report_stat1' name="brief_report_stat" onclick="handleRadio(this.value);" value="planned" >Planned/submitted
+<input type="radio" id='brief_report_stat2' name="brief_report_stat" onclick="handleRadio(this.value);" value="in-press" >In-press
+<input type="radio" id='brief_report_stat3' name="brief_report_stat" onclick="handleRadio(this.value);" value="published" checked="checked" >Published 
 
 
 <script type='text/javascript'>
@@ -15,8 +14,6 @@ function handleRadio(status) {
       $('#datasets_req').show(); $('#datasets_done').hide(); $('#datasets_none').hide();
       $('#identificators_req').hide(); $('#identificators_done').hide(); $('#identificators_none').show();
       $('#upload_req').hide(); $('#upload_done').hide(); $('#upload_none').show();
-      //Uncheck previous radio buttons
-
 
     } else if (status == 'in-press') {
       $('#authors_req').show(); $('#authors_done').hide(); $('#authors_none').hide();
@@ -94,9 +91,9 @@ function handleRadio(status) {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 &nbsp;<a href='sci_papers/paper_upload'>Upload paper</a></label> 
 
-
-
-<div id="sci_papers_id" >#{ render_partial :view_submit_index }</div>
+<p>&nbsp;</p>
+<label class="control-label">
+&nbsp;<a href='sci_papers/paper_upload'>View and submit</a></label> 
 
 
 

@@ -1,18 +1,75 @@
 <div class="control-group">
 <label class="control-label">Authors:</label>
-<!-- <a href="#myModal" role="button" class="btn2" data-toggle="modal">&nbsp;&nbsp;<small>Can't find author? </small></a>
--->
+<div class="controls"><small>Drag an author's name up or down to sort the list differently. </small>
+</div>
+
 </br>
 <div class="label"><ul id="sortable">
 <li class="ui-state-default2"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><span class="label label-inverse">^<input id="author" name="author">&nbsp;&nbsp;<span class="label label-important">Delete</span></span></li>
 <li class="ui-state-default2"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><span class="label label-inverse">^<input id="author2" name="author2"></a>&nbsp;&nbsp;<span class="label label-important">Delete</span></span></li>
 </ul>
 <p>&nbsp;</p>
-<div class="controls"><button class="btn btn-primary">More authors</button></div>
-<div class="controls"><small>Drag an author's name up or down to sort the list differently. </small>
+<div class="controls"><button class="btn btn-primary">More authors</button>
 <a href="#myModal" role="button" class="btn2" data-toggle="modal">&nbsp;&nbsp;<small>Can't find author? </small></a>
-</div></div>
 </div>
+</div>
+
+<div id="authors_id" >#{ render_partial :submit_or_back }</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+<h3 id="myModalLabel">Add author to list</h3>
+</div>
+
+<div class="modal-body">
+
+<div class="control-group">
+<label class="control-label">Last name:&nbsp;</label>
+<div class="controls"><input type="text" name="last_name"></div>
+</div>
+
+<div class="control-group">
+<label class="control-label">First name:&nbsp;</label>
+<div class="controls"><input type="text" name="first_name"></div>
+</div>
+
+<div class="control-group">
+<label class="control-label">Middle name:&nbsp;</label>
+<div class="controls"><input type="text" name="middle_name"></div>
+</div>
+
+<div class="control-group">
+<label class="control-label">Institution:&nbsp;</label>
+<div class="controls"><input type="text" name="institution"></div>
+</div>
+
+</div>
+
+<div class="modal-footer">
+<button class="btn" data-dismiss="modal">Close</button>
+<button class="btn btn-primary" id='author_button' name='author_button'>Add author</button>
+</div>
+</div>
+
+<div id="myJournal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+<h3 id="myModalLabel">Add journal to list</h3>
+</div>
+
+<div class="modal-body">
+
+<div class="modal-footer">
+<button class="btn" data-dismiss="modal">Close</button>
+<button class="btn btn-primary">Add author</button>
+</div>
+
+</div>
+<!-- - -->
+
+
 
 
 <script type='text/javascript'>

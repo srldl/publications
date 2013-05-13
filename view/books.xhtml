@@ -1,9 +1,102 @@
-<p>Book title:</p>
-<p>Editors: </p>
-<p> Book chapter: </p>
-<p> Publisher: </p>
-<p> Place of publisher: </p>
-<p> Country of publisher: </p>
+
+<input type="radio" id='books_stat1' name="books_stat" onclick="handleRadio(this.value);" value="planned" >Planned/submitted
+<input type="radio" id='books_stat2' name="books_stat" onclick="handleRadio(this.value);" value="in-press" >In-press
+<input type="radio" id='books_stat3' name="books_stat" onclick="handleRadio(this.value);" value="published" checked="checked" >Published 
+
+
+<script type='text/javascript'>
+function handleRadio(status) {
+    if (status == 'planned') {
+      $('#authors_req').show(); $('#authors_done').hide(); $('#authors_none').hide();
+      $('#publication_req').hide(); $('#publication_done').hide(); $('#publication_none').show();
+      $('#publication_details_req').hide(); $('#publication_details_done').hide(); $('#publication_details_none').show();
+      $('#summaries_req').show(); $('#summaries_done').hide(); $('#summaries_none').hide();
+      $('#datasets_req').show(); $('#datasets_done').hide(); $('#datasets_none').hide();
+      $('#identificators_req').hide(); $('#identificators_done').hide(); $('#identificators_none').show();
+      $('#upload_req').hide(); $('#upload_done').hide(); $('#upload_none').show();
+
+    } else if (status == 'in-press') {
+      $('#authors_req').show(); $('#authors_done').hide(); $('#authors_none').hide();
+      $('#publication_req').show(); $('#publication_done').hide(); $('#publication_none').hide();
+      $('#publication_details_req').hide(); $('#publication_details_done').hide(); $('#publication_details_none').show();
+      $('#summaries_req').show(); $('#summaries_done').hide(); $('#summaries_none').hide();
+      $('#datasets_req').show(); $('#datasets_done').hide(); $('#datasets_none').hide();
+      $('#identificators_req').hide(); $('#identificators_done').hide(); $('#identificators_none').show();
+      $('#upload_req').hide(); $('#upload_done').hide(); $('#upload_none').show();
+
+    } else {
+      $('#authors_req').show(); $('#authors_done').hide(); $('#authors_none').hide();
+      $('#publication_req').show(); $('#publication_done').hide(); $('#publication_none').hide();
+      $('#publication_details_req').show(); $('#publication_details_done').hide(); $('#publication_details_none').hide();
+      $('#summaries_req').show(); $('#summaries_done').hide(); $('#summaries_none').hide();
+      $('#datasets_req').show(); $('#datasets_done').hide(); $('#datasets_none').hide();
+      $('#identificators_req').show(); $('#identificators_done').hide(); $('#identificators_none').hide();
+      $('#upload_req').show(); $('#upload_done').hide(); $('#upload_none').hide();
+
+    }
+ 
+}
+</script>
+
+<p>&nbsp;</p>
+<label class="control-label">
+
+<span class="label label-info" style="display:none" id="authors_req">Required</span>
+<span id="authors_done" class="label" style="display:none">Done &nbsp;&nbsp;&nbsp;</span>
+<span id="authors_none" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;<a href='sci_papers/authors'>Author(s)</a></label>
+ 
+<label class="control-label">
+<span class="label label-info" style="display:none" id="publication_req">Required</span>
+<span class="label" style="display:none" id="publication_done">Done &nbsp;&nbsp;&nbsp;</span>
+<span style="display:none" id="publication_none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;<a href='sci_papers/publication'>Publication</a></label> 
+
+ 
+<label class="control-label">
+<span class="label label-info" style="display:none" id="publication_details_req">Required</span>
+<span class="label" style="display:none" id="publication_details_done">Done &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span style="display:none" id="publication_details_none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;<a href='sci_papers/publication_details'>Publication details</a></label> 
+ 
+<label class="control-label">
+<span class="label label-info" style="display:none" id="summaries_req">Required</span>
+<span class="label" style="display:none" id="summaries_done">Done &nbsp;&nbsp;&nbsp;</span>
+<span style="display:none" id="summaries_none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;<a href='sci_papers/abstracts'>Summaries</a></label> 
+ 
+<label class="control-label">
+<span class="label label-info" style="display:none" id="datasets_req">Required</span>
+<span class="label" style="display:none" id="datasets_done">Done &nbsp;&nbsp;&nbsp;</span>
+<span style="display:none" id="datasets_none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;<a href='sci_papers/datasets_projects'>Datasets and projects</a></label>
+ 
+<label class="control-label">
+<span class="label label-info" style="display:none" id="identificators_req">Required</span>
+<span class="label" style="display:none" id="identificators_done">Done &nbsp;&nbsp;&nbsp;</span>
+<span style="display:none" id="identificators_none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;<a href='sci_papers/identificators'>Identificators</a></label> 
+
+ 
+<label class="control-label">
+<span class="label label-info" style="display:none" id="upload_req">Required</span>
+<span class="label" style="display:none" id="upload_done">Done &nbsp;&nbsp;&nbsp;</span>
+<span style="display:none" id="upload_none">&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;<a href='sci_papers/paper_upload'>Upload paper</a></label> 
+
+<p>&nbsp;</p>
+<label class="control-label">
+&nbsp;<a href='sci_papers/paper_upload'>View and submit</a></label> 
+
+
+
 
 
 
