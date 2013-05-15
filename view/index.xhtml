@@ -1,3 +1,4 @@
+<form class="form-inline" accept-charset="UTF-8" action="publications">
 <p>&nbsp;</p>
 <label class="control-label">Publication category:</label> 
 <div class="controls">
@@ -7,71 +8,7 @@
            <option value="#{elem}">#{elem}</option>
        <?r end ?>
     </select>
+&nbsp;
+<button class="btn btn-primary" type="submit">Next >></button>
 </div>
-<p> &nbsp;</p>
-
-
-<script type="text/javascript">
-   $('#publication_category').change(function() {
-     d = document.getElementById("publication_category");
-     //Hide all previous results
-     $('#sci_papers_id').hide();
-     $('#books_id').hide();
-     $('#phd_thesis_id').hide();
-     $('#master_thesis_id').hide();
-     $('#proceedings_id').hide();
-     $('#abstracts_id').hide();
-     $('#posters_id').hide();
-     $('#report_series_id').hide();
-     $('#brief_report_series_id').hide();
-     $('#popular_sci_id').hide();
-     switch (d.value)
-     {
-     case 'Peer-reviewed publications':
-        $('#sci_papers_id').show();
-        break;
-     case 'Book and book chapters':
-        $('#books_id').show();
-        break;
-     case 'PhD thesis':
-        $('#phd_thesis_id').show();
-        break;
-     case 'Master thesis':
-        $('#master_thesis_id').show();
-        break;
-     case 'Proceedings':
-        $('#proceedings_id').show();
-        break;
-     case 'Abstracts':
-        $('#abstracts_id').show();
-        break;
-     case 'Posters':
-        $('#posters_id').show();
-        break;
-     case 'Report series':
-        $('#report_series_id').show();
-        break;
-     case 'Brief report series':
-        $('#brief_report_series_id').show();
-        break;
-     case 'Popular science':
-        $('#popular_sci_id').show();
-        break;
-     }
-  
-   });
-</script>
-
-
-
-<div id="sci_papers_id" style="display:none" >#{ render_partial :sci_papers }</div>
-<div id="books_id" style="display:none">#{ render_partial :books }</div>
-<div id="phd_thesis_id" style="display:none">#{ render_partial :phd_thesis }</div>
-<div id="master_thesis_id" style="display:none">#{ render_partial :master_thesis }</div>
-<div id="proceedings_id" style="display:none">#{ render_partial :proceedings }</div>
-<div id="abstracts_id" style="display:none">#{ render_partial :abstracts }</div>
-<div id="posters_id" style="display:none">#{ render_partial :posters }</div>
-<div id="report_series_id" style="display:none">#{ render_partial :report_series }</div>
-<div id="brief_report_series_id" style="display:none">#{ render_partial :brief_report_series }</div>
-<div id="popular_sci_id" style="display:none">#{ render_partial :popular_sci }</div>
-
+</form>
