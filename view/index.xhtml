@@ -1,14 +1,16 @@
-<form class="form-inline" accept-charset="UTF-8" action="publications">
+<form class="form-inline" accept-charset="UTF-8" action="./create">
 <p>&nbsp;</p>
-<label class="control-label">Publication category:</label> 
+<label class="control-label">Publication administration</label> 
 <div class="controls">
-    <select name='publication_category' id='publication_category'>
-       <option value="Select" selected>-- Select --</option>
-       <?r @publication_category.each_with_index do |elem, i| ?>
-           <option value="#{elem}">#{elem}</option>
-       <?r end ?>
-    </select>
+<table>
+<tr><td>Status</td><td>Title&nbsp;&nbsp;</td><td>Authors&nbsp;&nbsp;</td><td>Publication name&nbsp;</td><td></td></tr>
+  <?r @publications.each_with_index do |elem, i| ?>
+   <tr><td>Draft</td><td>#{elem}</td><td>xxx</td><td>xxx</td><td>Delete</td></tr>          
+  <?r end ?>
+</table>
 &nbsp;
-<button class="btn btn-primary" type="submit">Next >></button>
+<br />
+<a href="fetch_ris" class="btn btn-primary">Fetch from RiS</a>
+<a href="index2" class="btn btn-primary">New</a>
 </div>
 </form>

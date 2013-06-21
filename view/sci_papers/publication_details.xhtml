@@ -1,52 +1,59 @@
-</div>
+<form class="form-inline" accept-charset="UTF-8" action="publication_details_create" method="post">
 <div class="control-group">
-<label class="control-label">Title:</label>
-<div class="controls"><input type="text" value="#{@title}" name='title'></div></div>
+<label class="control-label">Original title:</label>
+<div class="controls"><input type="text" value="#{@title}" name='orig_title' id='orig_title'>
+<input type="text" name='orig_language' id='orig_language'></div></div>
+
+<label class="control-label">English title translation (if not as above):</label>
+<div class="controls"><input type="text" value="#{@title}" name='eng_title' id='eng_title'></div>
+
 <div class="control-group">
 <label class="control-label">Year:</label>&nbsp;&nbsp;
-
 <div class="controls"><input type="text" name='published_year'>
 <span class="label label-important">Required</span></div>
 </div>
 
 <div class="control-group">
 <label class="control-label">Volume:</label>
-<div class="controls"><input type="text" name='volume'></div>
+<div class="controls"><input type="text" name='volume' id='volume'>
 </div>
 
 <div class="control-group">
 <label class="control-label">Issue:</label>
-<div class="controls"><input type="text" name='issue'></div>
+<div class="controls"><input type="text" name='issue' id='issue'>
 </div>
 
 <div class="control-group">
 <label class="control-label">Suppl:</label>
-<div class="controls"><input type="text" name='suppl'></div>
+<div class="controls"><input type="text" name='suppl' id='suppl'></div>
 </div>
 
 <div class="control-group">
 <label class="control-label">From page:</label>&nbsp;&nbsp;<label class="control-label">To page:</label>
 <label class="control-label"><i>or</i> Total no of pages:</label>
 <div class="controls">
-<input type="text" class="input-mini" name='from_page'>
-<input type="text" class="input-mini" name='to_page'>
-<input type="text" class="input-mini" name='pages'>
-</div></div>
+<input type="text" class="input-mini" name='from_page' id='from_page'>
+<input type="text" class="input-mini" name='to_page' id='to_page'>
+<input type="text" class="input-mini" name='tot_number_pages' id='tot_number_pages'>
+</div>
+</div>
 
 <div class="control-group"><label class="control-label">Article no:</label>
 <div class="controls"><input type="text"  class="input-mini" name='article_no'></div></div>
 
 <div class="control-group"><label class="control-label">
 Date (dd.mm.yyyy for newspapers etc):</label>
-<div class="controls"><input type="text" class="input-small" id="datepicker" /></div></div>
+<div class="controls"><input type="text" class="input-small" id="publication_date" name="publication_date" /></div></div>
 
 
 <div class="control-group">
-<input type="checkbox" name="ice_affiliation">Yes, publication is affiliated to ICE
+<input type="checkbox" name="ice_affiliation" id="ice_affiliation">Yes, publication is affiliated to ICE
 </div>
 <div class="control-group">
-<input type="checkbox" name="np_affiliation" checked>Yes, publication is affiliated to NP activity (you may register your other publications as well to appear on your CV on NP homepages)
+<input type="checkbox" name="np_affiliation" id="np_affiliation" checked>Yes, publication is affiliated to NP activity (you may register your other publications as well to appear on your CV on NP homepages)
 </div>
 
-<div id="authors_id" >#{ render_partial :submit_or_back }</div>
+
+<div id="authors_id" >#{ render_partial :save_or_back }</div>
+</form>
 

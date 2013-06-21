@@ -1,0 +1,14 @@
+<form class="form-inline" accept-charset="UTF-8" action="publications">
+<p>&nbsp;</p>
+<label class="control-label">Publication category:</label> 
+<div class="controls">
+    <select name='publication_category' id='publication_category'>
+       <option value="Select" selected>-- Select --</option>
+       <?r @publication_category.each_with_index do |elem, i| ?>
+           <option value="#{elem}">#{elem}</option>
+       <?r end ?>
+    </select>
+&nbsp;
+<button class="btn btn-primary" type="submit">Next >></button>
+</div>
+</form>

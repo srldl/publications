@@ -1,7 +1,7 @@
 <form class="form-inline" accept-charset="UTF-8" action="authors_create" method="post">
 <div class="control-group">
-<label class="control-label">Authors:</label>
-<div class="controls"><small>Drag an author's name up or down to sort the list differently. </small>
+<label class="control-label">Keywords:</label>
+<div class="controls"><small>Keywords will be used to find publications at the NP web. </small>
 </div>
 <br />
 
@@ -27,8 +27,7 @@
 </div>
 
 <p>&nbsp;</p>
-<div class="controls">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" name="add_author" id="add_author" onClick="add_remove_author(this); return false" />Add author</button>
-<a href="#myModal" role="button" class="btn2" data-toggle="modal">&nbsp;&nbsp;<small>Can't find author? </small></a>
+<div class="controls">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" name="add_author" id="add_author" onClick="add_remove_author(this); return false" />Add keyword</button>
 </div>
 </div>
 
@@ -119,62 +118,6 @@ function add_remove_author(elem) {
 }
 </script>
 
-
-
-<!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-<h3 id="myModalLabel">Add author to list</h3>
-</div>
-
-<div class="modal-body">
-
-<div class="control-group">
-<label class="control-label">Last name:&nbsp;</label>
-<div class="controls"><input type="text" name="last_name"></div>
-</div>
-
-<div class="control-group">
-<label class="control-label">First name:&nbsp;</label>
-<div class="controls"><input type="text" name="first_name"></div>
-</div>
-
-<div class="control-group">
-<label class="control-label">Middle name:&nbsp;</label>
-<div class="controls"><input type="text" name="middle_name"></div>
-</div>
-
-<div class="control-group">
-<label class="control-label">Institution:&nbsp;</label>
-<div class="controls"><input type="text" name="institution"></div>
-</div>
-
-</div>
-
-<div class="modal-footer">
-<button class="btn" data-dismiss="modal">Close</button>
-<button class="btn btn-primary" id='author_button' name='author_button'>Add author</button>
-</div>
-</div>
-
-<form>
-<div id="myJournal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-<h3 id="myModalLabel">Add journal to list</h3>
-</div>
-
-<div class="modal-body">
-
-<div class="modal-footer">
-<button class="btn" data-dismiss="modal">Close</button>
-<button class="btn btn-primary">Add author</button>
-</div>
-
-</div>
-
-<!-- - -->
 
 </div>
 </form>

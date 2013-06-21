@@ -8,11 +8,14 @@
 
 <script type='text/javascript'>
 function handleRadio(status) {
+
+    /* Take care of status - planned/summitted, in-press, published */
     if (status == 'planned') {
       $('#authors_req').show(); $('#authors_done').hide(); $('#authors_none').hide();
       $('#publication_req').hide(); $('#publication_done').hide(); $('#publication_none').show();
       $('#publication_details_req').hide(); $('#publication_details_done').hide(); $('#publication_details_none').show();
       $('#summaries_req').show(); $('#summaries_done').hide(); $('#summaries_none').hide();
+      $('#keywords_req').show(); $('#keywords_done').hide(); $('#keywords_none').hide();
       $('#datasets_req').show(); $('#datasets_done').hide(); $('#datasets_none').hide();
       $('#identificators_req').hide(); $('#identificators_done').hide(); $('#identificators_none').show();
       $('#upload_req').hide(); $('#upload_done').hide(); $('#upload_none').show();
@@ -24,6 +27,7 @@ function handleRadio(status) {
       $('#publication_req').show(); $('#publication_done').hide(); $('#publication_none').hide();
       $('#publication_details_req').hide(); $('#publication_details_done').hide(); $('#publication_details_none').show();
       $('#summaries_req').show(); $('#summaries_done').hide(); $('#summaries_none').hide();
+      $('#keywords_req').show(); $('#keywords_done').hide(); $('#keywords_none').hide();
       $('#datasets_req').show(); $('#datasets_done').hide(); $('#datasets_none').hide();
       $('#identificators_req').hide(); $('#identificators_done').hide(); $('#identificators_none').show();
       $('#upload_req').hide(); $('#upload_done').hide(); $('#upload_none').show();
@@ -33,6 +37,7 @@ function handleRadio(status) {
       $('#publication_req').show(); $('#publication_done').hide(); $('#publication_none').hide();
       $('#publication_details_req').show(); $('#publication_details_done').hide(); $('#publication_details_none').hide();
       $('#summaries_req').show(); $('#summaries_done').hide(); $('#summaries_none').hide();
+      $('#keywords_req').show(); $('#keywords_done').hide(); $('#keywords_none').hide();
       $('#datasets_req').show(); $('#datasets_done').hide(); $('#datasets_none').hide();
       $('#identificators_req').show(); $('#identificators_done').hide(); $('#identificators_none').hide();
       $('#upload_req').show(); $('#upload_done').hide(); $('#upload_none').hide();
@@ -72,6 +77,13 @@ function handleRadio(status) {
 <span style="display:none" id="summaries_none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 &nbsp;<a href='../sci_papers/abstracts'>Summaries</a></label> 
+
+<label class="control-label">
+<span class="label label-info" style="display:none" id="keywords_req">Required</span>
+<span class="label" style="display:none" id="keywords_done">Done &nbsp;&nbsp;&nbsp;</span>
+<span style="display:none" id="keywords_none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;<a href='../sci_papers/keywords'>Keywords</a></label>
  
 <label class="control-label">
 <span class="label label-info" style="display:none" id="datasets_req">Required</span>
@@ -96,14 +108,17 @@ function handleRadio(status) {
 
 
 
-<div id="sci_papers_id" >#{ render_partial :view_submit_index }</div>
+<div id="sci_papers_id" >#{ render_partial :view_and_submit_index }</div>
 
 
 <script type='text/javascript'>
+/* Script run onload - 'published' is default */
+
 $('#authors_req').show();
 $('#publication_req').show();
 $('#publication_details_req').show();
 $('#summaries_req').show();
+$('#keywords_req').show();
 $('#datasets_req').show();
 $('#identificators_req').show();
 $('#upload_req').show();

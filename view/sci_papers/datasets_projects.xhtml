@@ -1,11 +1,13 @@
+<form class="form-inline" accept-charset="UTF-8" action="datasets_projects_create" method="post">
 <div class="control-group">
 <label class="control-label">Link to affiliated dataset:</label>
-<div class="controls"><input type="text" name="dataset"></div>
+<div class="controls"><input type="text" name="dataset" id="dataset"></div>
 </div>
 
 <div class="control-group">
 <label class="control-label">Link to affiliated project:</label>
-<div class="controls"><input type="text" name="project" value="">
+<div class="controls"><input type="text" name="project" id="project" value="">
 </div></div>
-<div id="authors_id" >#{ render_partial :submit_or_back }</div>
+<div id="authors_id" >#{ render_partial :save_or_back }</div>
+</form>
 

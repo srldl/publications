@@ -9,20 +9,33 @@
 #
 # this will force the controller to be mounted on: /otherurl.
 
+#require pp
+
 class MainController < Controller
-  # the index action is called automatically when no other action is specified
+
+  #Select available publications submitted or drafts 
   def index
-    puts "kom til index----------------------------------"
-    @title = 'NP Publications'
+    @publications = ['Polar bears in the mist', 'Arctic foxes in the mist', 'Sea gulls in the mist']
+  end
+
+  def create
+     puts "-------------create-----------------"
+     form = request.params
+     #pp form
+     redirect("../index2"){|uri| uri.scheme = 'http'}
+  end
+
+  #Select publication type
+  def index2
     @publication_category = ['Peer-reviewed publications', 'Book and book chapters', 'PhD thesis', 'Master thesis', 'Proceedings', 'Abstracts', 'Posters', 'Report series', 'Brief report series', 'Popular science']
   end
 
   def publications
-    form = request.params
-    puts form
-    puts "kom til publications----------------------------------"
-    @publication_category = form['publication_category']
-    puts @publication_category
+
+    #Get selected choice
+    @publication_category = request.params['publication_category']
+    
+    #Redirect to fitting url
     case @publication_category 
     when 'Peer-reviewed publications'
         redirect("../sci_papers"){|uri| uri.scheme = 'http'}
@@ -47,12 +60,5 @@ class MainController < Controller
     end 
   end
 
-  # the string returned at the end of the function is used as the html body
-  # if there is no template for the action. if there is a template, the string
-  # is silently ignored
-  def notemplate
-    @title = 'NP Publications'
-    
-    return 'There is no \'notemplate.xhtml\' associated with this action.'
-  end
+ 
 end

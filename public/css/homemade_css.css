@@ -1,0 +1,28 @@
+
+
+#content
+{
+    background:    #fff;
+    border:        1px solid #ddd;
+    padding:       20px;
+    width:         898px;
+}
+
+/*Frame of the author's list */
+#content_list
+{
+    border:        1px solid #111ddd;
+    padding:       20px;
+    width:         400px;
+}
+
+/*Space between input fields author */ 
+#author0 
+{
+   margin-bottom:5px;
+}
+
+
+
+   
+

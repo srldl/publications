@@ -4,24 +4,24 @@
  * @author Yorick Peterse
  * @link   http://yorickpeterse.com/
  */
-#container
+/*#container
 {
     margin:  20px auto;
     width:   940px;
-}
+}*/
 
 
 
-#content
+/*#content
 {
     background:    #fff;
     border:        1px solid #ddd;
     padding:       20px;
     width:         898px;
-}
+} */
 
 /* Top part of the website, contains the title and the navigation menu */
-#top
+/*#top
 {
     background:    #E33F1E;
     height:        70px;
@@ -69,9 +69,10 @@
             {
                 background: #D43919;
             }
+*/
 
 /* Footer at the bottom of the page */
-#footer
+/*#footer
 {
     text-align: center;
 }
@@ -86,4 +87,4 @@ h10
 {
     font-size: 10px;
      
-}
+}*/
